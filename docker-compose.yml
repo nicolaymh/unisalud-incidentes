@@ -1,0 +1,41 @@
+version: "3.8"
+
+# Red y volumen con nombres explícitos (documentación + claridad)
+networks:
+  unisalud-net:
+    name: unisalud-net
+
+volumes:
+  unisalud-mysql-data:
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: unisalud-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root123    # ← más adelante lo moveremos a .env
+      # Si quieres autocrear BD/usuario, descomenta:
+      # MYSQL_DATABASE: unisalud_dev
+      # MYSQL_USER: unisalud
+      # MYSQL_PASSWORD: unisalud123
+    ports:
+      - "3306:3306"                   # cambia a "3307:3306" si 3306 está ocupado
+    volumes:
+      - unisalud-mysql-data:/var/lib/mysql
+    networks:
+      - unisalud-net
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: unisalud-pma
+    restart: unless-stopped
+    environment:
+      PMA_HOST: mysql                 # nombre del servicio (DNS interno en la red)
+      PMA_ABSOLUTE_URI: http://localhost:8080/
+    ports:
+      - "8080:80"
+    depends_on:
+      - mysql
+    networks:
+      - unisalud-net
