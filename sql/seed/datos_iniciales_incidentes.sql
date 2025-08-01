@@ -6,7 +6,7 @@ INSERT INTO roles (id, nombre) VALUES
 (2, 'usuario');
 
 -- ============================
--- Tabla: sedes (en orden: Bogotá, Manizales, Palmira, Medellín)
+-- Tabla: sedes
 -- ============================
 INSERT INTO sedes (id, nombre) VALUES
 (1, 'Bogotá'),
@@ -15,7 +15,7 @@ INSERT INTO sedes (id, nombre) VALUES
 (4, 'Medellín');
 
 -- ============================
--- Tabla: prioridades (en orden: baja, media, alta)
+-- Tabla: prioridades
 -- ============================
 INSERT INTO prioridades (id, nombre) VALUES
 (1, 'baja'),
@@ -33,7 +33,7 @@ INSERT INTO causas (id, nombre) VALUES
 (5, 'Otro');
 
 -- ============================
--- Tabla: categorias (microservicios)
+-- Tabla: categorías (microservicios)
 -- ============================
 INSERT INTO categorias (id, nombre) VALUES
 (1, 'Afiliaciones'),
@@ -56,16 +56,15 @@ INSERT INTO categorias (id, nombre) VALUES
 (18, 'Referencia y contrarreferencia'),
 (19, 'Usuarios');
 
-
 -- ============================
 -- Subcategorías por categoría
 -- ============================
 INSERT INTO subcategorias (categoria_id, nombre) VALUES
--- Afiliaciones (1)
+-- Afiliaciones
 (1, 'Consultar Solicitudes de Afiliación'),
 (1, 'Crear UPC adicional'),
 
--- Agenda médica (2)
+-- Agenda médica
 (2, 'Administración de Consultorios'),
 (2, 'Agendar Citas'),
 (2, 'Consulta Agendas'),
@@ -77,36 +76,38 @@ INSERT INTO subcategorias (categoria_id, nombre) VALUES
 (2, 'Parámetros Tiempos Citas'),
 (2, 'Tablero de Multas'),
 
--- Auditoría cuentas médicas (3)
+-- Auditoría cuentas médicas
 (3, 'Consulta Cuentas Médicas'),
 (3, 'Descarga Glosa Final'),
 (3, 'Descarga Glosa Inicial'),
+(3, 'Descarga Glosa Sostenida'),
 (3, 'Descarga Trazabilidad Glosas'),
 (3, 'Detalle de Facturas'),
+(3, 'Parametrizacion Dias Laborales'),
 (3, 'Radicación RIPS'),
 (3, 'Respuesta Glosa Inicial'),
 (3, 'Respuesta Glosa Sostenida'),
 (3, 'Tablero de Facturas'),
 (3, 'Trazabilidad de la Radicación de la Facturación'),
 
--- Auditoría de sistema (4)
+-- Auditoría de sistema
 (4, 'Trazas de Auditoría'),
 
--- Auditoría médica concurrente (5)
+-- Auditoría médica concurrente
 (5, 'Consultar informes consolidados Auditoría médica concurrente'),
 (5, 'Gestión de Auditorias'),
 
--- Autorizaciones (6)
+-- Autorizaciones
 (6, 'Consulta de Autorizaciones'),
 (6, 'Parametrizador Auxilio Lentes y Monturas'),
 (6, 'Parámetros Exoneración'),
 
--- Caja y facturación (7)
+-- Caja y facturación
 (7, 'Cargos Facturados'),
 (7, 'Facturación de Contado'),
 (7, 'Maestro Efectivo Base'),
 
--- Calidad (8)
+-- Calidad
 (8, 'Auditoria Historia Clinica'),
 (8, 'Condiciones de Habilitación'),
 (8, 'Formato calidad Historia Clinica'),
@@ -115,10 +116,10 @@ INSERT INTO subcategorias (categoria_id, nombre) VALUES
 (8, 'Reuniones Comité'),
 (8, 'Tipos Formato Calidad'),
 
--- Comité técnico científico (9)
+-- Comité técnico científico
 (9, 'Consultar CTC'),
 
--- Convenios y contratos (10)
+-- Convenios y contratos
 (10, 'Administración de EAPB'),
 (10, 'Administración de Planes'),
 (10, 'Administración de Proveedores'),
@@ -133,46 +134,47 @@ INSERT INTO subcategorias (categoria_id, nombre) VALUES
 (10, 'Servicios por Prestador'),
 (10, 'Tarifas por Servicio'),
 
--- Datos maestros (11)
+-- Datos maestros
 (11, 'Consultar Datos Maestros'),
 
--- Historia clínica (12)
+-- Historia clínica
 (12, 'Atención Pacientes'),
 (12, 'Configuración de Plantillas'),
 (12, 'Creador de Formatos'),
-(12, 'Dicccionario de Formularios'),
+(12, 'Diccionario de Formularios'),
 (12, 'Grupos Etareos'),
 (12, 'Parametrizador RIAS'),
 (12, 'Préstamo de Historia Clínica'),
 (12, 'Recomendaciones'),
 
--- Imagenología (13)
+-- Imagenología
 (13, 'Ayudas diagnósticas'),
 (13, 'Consulta Imagenología'),
 (13, 'Resultados Imagenología'),
 
--- Informes (14)
+-- Informes
 (14, 'Diseñador de Informes'),
+(14, 'Generador de Consultas'),
 
--- Laboratorio clínico (15)
+-- Laboratorio clínico
 (15, 'Consulta Grupo Etáreo Laboratorio'),
 (15, 'Consulta Laboratorio Clínico'),
 (15, 'Consulta Parámetros por Examen de Laboratorio'),
 (15, 'Consultar Examenes por Sección'),
 (15, 'Resultados de Exámenes'),
 
--- Prestaciones económicas (16)
+-- Prestaciones económicas
 (16, 'Licencias e Incapacidades'),
 
--- Procesos estratégicos (17)
+-- Procesos estratégicos
 (17, 'Consulta Comités'),
 (17, 'Consultar Maestro Acta Consecutivo Comité'),
 (17, 'Tablero de Compromisos'),
 
--- Referencia y contrarreferencia (18)
+-- Referencia y contrarreferencia
 (18, 'Consulta Referencia'),
 
--- Usuarios (19)
+-- Usuarios
 (19, 'Consulta Maestros Correos por Área'),
 (19, 'Consultar Perfil'),
 (19, 'Crear Usuarios');
