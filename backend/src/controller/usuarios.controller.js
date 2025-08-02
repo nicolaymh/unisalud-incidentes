@@ -1,23 +1,66 @@
 import pool from "../database/connection.js"
-import { obtenerUsuarios } from "../models/usuarios.model.js";
+import * as usuariosModel from "../models/usuarios.model.js"
+import { generarToken } from "../helpers/jwt.js"
 
 
-const login = (req, res) => {
-    const { correo, numero_documento } =req.body;
+const login = async (req, res) => {
+  const { correo, password } = req.body;
 
-    console.log("Datos recibidos", correo, numero_documento);
+  try {
+    const usuario = await usuariosModel.login(correo);
+
+    if (!usuario) {
+      return res.status(401).json({
+        ok: false,
+        msg: "Correo no registrado",
+      });
+    }
+
+    if (usuario.user_password !== password) {
+      return res.status(401).json({
+        ok: false,
+        msg: "Usuario o contraseña incorrecta",
+      });
+    }
+
+    // Generar el token JWT
+    const token = generarToken({
+      id: usuario.id,
+      rol: usuario.rol_id,
+      sede: usuario.sede_id
+    });
 
     return res.status(200).json({
-        ok:true,
-        msg: "Controlador funcionando correctamente",
-        datos: { correo, numero_documento },
-    })
+      ok: true,
+      msg: "Login exitoso",
+      token,
+      usuario: {
+        id: usuario.id,
+        correo: usuario.correo,
+        numero_documento: usuario.numero_documento,
+        rol: {
+          id: usuario.rol_id,
+          nombre: usuario.rol,
+        },
+        sede: {
+          id: usuario.sede_id,
+          nombre: usuario.sede,
+        },
+      },
+    });
+  } catch (error) {
+    console.error("❌ Error en login:", error);
+    return res.status(500).json({
+      ok: false,
+      msg: "Error en el login",
+    });
+  }
 };
 
 
-const listarUsuarios = async (req, res) => {
+const listarUsuariosTest = async (req, res) => {
   try {
-    const usuarios = await obtenerUsuarios();
+    const usuarios = await usuariosModel.obtenerUsuarios();
     res.status(200).json({ ok: true, usuarios });
   } catch (error) {
     console.error("❌ Error al consultar usuarios:", error);
@@ -29,5 +72,5 @@ const listarUsuarios = async (req, res) => {
 
 export {
     login,
-    listarUsuarios,
+    listarUsuariosTest,
 }
