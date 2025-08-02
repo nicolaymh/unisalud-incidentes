@@ -39,7 +39,7 @@ CREATE TABLE usuarios (
     correo VARCHAR(190) NOT NULL COMMENT 'Correo electrónico del usuario',
     sede_id INT UNSIGNED NOT NULL COMMENT 'ID de la sede a la que pertenece el usuario',
     rol_id INT UNSIGNED NOT NULL COMMENT 'ID del rol asignado al usuario',
-    contrasena_hash VARCHAR(255) NOT NULL COMMENT 'Contraseña almacenada en formato hash',
+    user_password VARCHAR(255) NOT NULL COMMENT 'Contraseña almacenada en formato hash',
     creado_en TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Fecha de creación del usuario',
 
     UNIQUE KEY uq_usuarios_documento (numero_documento), -- Evita duplicación de documentos

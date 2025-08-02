@@ -1,5 +1,42 @@
--- Insertar usuarios de prueba
-INSERT INTO usuarios (numero_documento, correo, sede_id, rol_id, contrasena_hash) VALUES
-('100000001', 'admin@hospital.edu.co', 1, 1, '$2b$10$z1ZBpCml6IVCqFPobP7a0eFZxeXurZX/.2g64ewG0rqVO6eObOn0K'), -- admin123
-('100000002', 'user1@hospital.edu.co', 2, 2, '$2b$10$1zRnmvp0g/1PfeMrf0p4E.Ond2FqXg0IO5Nndy7c4V6jj9xZuE2QG'), -- user123
-('100000003', 'user2@hospital.edu.co', 3, 2, '$2b$10$1zRnmvp0g/1PfeMrf0p4E.Ond2FqXg0IO5Nndy7c4V6jj9xZuE2QG'); -- user123
+-- Insertar 40 usuarios con contraseñas en texto plano
+INSERT INTO usuarios (numero_documento, correo, sede_id, rol_id, user_password) VALUES
+('100000001', 'admin@unal.edu.co', 2, 1, 'admin123'),
+('100000002', 'user2@unal.edu.co', 3, 2, 'user123'),
+('100000003', 'user3@unal.edu.co', 4, 2, 'user123'),
+('100000004', 'user4@unal.edu.co', 1, 2, 'user123'),
+('100000005', 'user5@unal.edu.co', 2, 2, 'user123'),
+('100000006', 'user6@unal.edu.co', 3, 2, 'user123'),
+('100000007', 'user7@unal.edu.co', 4, 2, 'user123'),
+('100000008', 'user8@unal.edu.co', 1, 2, 'user123'),
+('100000009', 'user9@unal.edu.co', 2, 2, 'user123'),
+('100000010', 'user10@unal.edu.co', 3, 2, 'user123'),
+('100000011', 'user11@unal.edu.co', 4, 2, 'user123'),
+('100000012', 'user12@unal.edu.co', 1, 2, 'user123'),
+('100000013', 'user13@unal.edu.co', 2, 2, 'user123'),
+('100000014', 'user14@unal.edu.co', 3, 2, 'user123'),
+('100000015', 'user15@unal.edu.co', 4, 2, 'user123'),
+('100000016', 'user16@unal.edu.co', 1, 2, 'user123'),
+('100000017', 'user17@unal.edu.co', 2, 2, 'user123'),
+('100000018', 'user18@unal.edu.co', 3, 2, 'user123'),
+('100000019', 'user19@unal.edu.co', 4, 2, 'user123'),
+('100000020', 'user20@unal.edu.co', 1, 2, 'user123'),
+('100000021', 'user21@unal.edu.co', 2, 2, 'user123'),
+('100000022', 'user22@unal.edu.co', 3, 2, 'user123'),
+('100000023', 'user23@unal.edu.co', 4, 2, 'user123'),
+('100000024', 'user24@unal.edu.co', 1, 2, 'user123'),
+('100000025', 'user25@unal.edu.co', 2, 2, 'user123'),
+('100000026', 'user26@unal.edu.co', 3, 2, 'user123'),
+('100000027', 'user27@unal.edu.co', 4, 2, 'user123'),
+('100000028', 'user28@unal.edu.co', 1, 2, 'user123'),
+('100000029', 'user29@unal.edu.co', 2, 2, 'user123'),
+('100000030', 'user30@unal.edu.co', 3, 2, 'user123'),
+('100000031', 'user31@unal.edu.co', 4, 2, 'user123'),
+('100000032', 'user32@unal.edu.co', 1, 2, 'user123'),
+('100000033', 'user33@unal.edu.co', 2, 2, 'user123'),
+('100000034', 'user34@unal.edu.co', 3, 2, 'user123'),
+('100000035', 'user35@unal.edu.co', 4, 2, 'user123'),
+('100000036', 'user36@unal.edu.co', 1, 2, 'user123'),
+('100000037', 'user37@unal.edu.co', 2, 2, 'user123'),
+('100000038', 'user38@unal.edu.co', 3, 2, 'user123'),
+('100000039', 'user39@unal.edu.co', 4, 2, 'user123'),
+('100000040', 'user40@unal.edu.co', 1, 2, 'user123');

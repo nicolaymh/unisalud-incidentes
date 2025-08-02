@@ -54,7 +54,8 @@ INSERT INTO categorias (id, nombre) VALUES
 (16, 'Prestaciones económicas'),
 (17, 'Procesos estratégicos'),
 (18, 'Referencia y contrarreferencia'),
-(19, 'Usuarios');
+(19, 'Usuarios'),
+(20, 'Otros');
 
 -- ============================
 -- Subcategorías por categoría
@@ -177,4 +178,10 @@ INSERT INTO subcategorias (categoria_id, nombre) VALUES
 -- Usuarios
 (19, 'Consulta Maestros Correos por Área'),
 (19, 'Consultar Perfil'),
-(19, 'Crear Usuarios');
+(19, 'Crear Usuarios'),
+
+-- Otros
+(20, 'Cargue Nómina'),
+(20, 'Adres'),
+(20, 'Aportes'),
+(20, 'Crear solicitud');
