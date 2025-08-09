@@ -13,8 +13,8 @@ INSERT INTO roles (id, nombre) VALUES
 INSERT INTO sedes (id, nombre) VALUES
 (1, 'Bogotá'),
 (2, 'Manizales'),
-(4, 'Medellín'),
-(3, 'Palmira');
+(3, 'Medellín'),
+(4, 'Palmira');
 
 -- ============================
 -- Tabla: prioridades
