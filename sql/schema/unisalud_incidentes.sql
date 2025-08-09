@@ -76,7 +76,8 @@ CREATE TABLE subcategorias (
 -- ======================================================
 CREATE TABLE prioridades (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, -- Identificador único de la prioridad
-    nombre VARCHAR(50) NOT NULL UNIQUE COMMENT 'Nivel de prioridad (baja, media, alta)'
+    nombre VARCHAR(50) NOT NULL UNIQUE COMMENT 'Nivel de prioridad (baja, media, alta, crítica)',
+    orden TINYINT UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Orden de visualización'
 );
 
 -- ======================================================
@@ -89,10 +90,10 @@ CREATE TABLE causas (
 );
 
 -- ======================================================
--- Tabla: incidentes
+-- Tabla: hims_incidentes
 -- Registra los reportes de incidentes realizados por los usuarios
 -- ======================================================
-CREATE TABLE incidentes (
+CREATE TABLE hims_incidentes (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, -- Identificador único del incidente
 
     usuario_id INT UNSIGNED NOT NULL COMMENT 'ID del usuario que reporta el incidente',

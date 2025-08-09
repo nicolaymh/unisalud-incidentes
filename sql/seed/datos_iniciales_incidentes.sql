@@ -1,3 +1,5 @@
+USE unisalud_incidentes;
+
 -- ============================
 -- Tabla: roles
 -- ============================
@@ -11,25 +13,26 @@ INSERT INTO roles (id, nombre) VALUES
 INSERT INTO sedes (id, nombre) VALUES
 (1, 'Bogotá'),
 (2, 'Manizales'),
-(3, 'Palmira'),
-(4, 'Medellín');
+(4, 'Medellín'),
+(3, 'Palmira');
 
 -- ============================
 -- Tabla: prioridades
 -- ============================
-INSERT INTO prioridades (id, nombre) VALUES
-(1, 'baja'),
-(2, 'media'),
-(3, 'alta');
+INSERT INTO prioridades (id, nombre, orden) VALUES
+(1, 'baja', 1),
+(2, 'media', 2),
+(3, 'alta', 3),
+(4, 'crítica', 4);
 
 -- ============================
 -- Tabla: causas
 -- ============================
 INSERT INTO causas (id, nombre) VALUES
-(1, 'Error de sistema'),
-(2, 'Fallo de usuario'),
-(3, 'Problema de red'),
-(4, 'Mantenimiento programado'),
+(1, 'Error de aplicación'),
+(2, 'Problema de red/conectividad'),
+(3, 'Error de configuración/parametrización'),
+(4, 'Seguridad/acceso no autorizado'),
 (5, 'Otro');
 
 -- ============================
@@ -185,3 +188,13 @@ INSERT INTO subcategorias (categoria_id, nombre) VALUES
 (20, 'Adres'),
 (20, 'Aportes'),
 (20, 'Crear solicitud');
+
+
+-- ============================
+-- Checks de verificación
+-- ============================
+SELECT COUNT(*) AS total_roles FROM roles;
+SELECT * FROM sedes;
+SELECT * FROM prioridades ORDER BY orden;
+SELECT COUNT(*) AS total_categorias FROM categorias;
+SELECT COUNT(*) AS total_subcategorias FROM subcategorias;
