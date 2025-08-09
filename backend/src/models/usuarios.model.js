@@ -1,6 +1,6 @@
 import pool from "../database/connection.js";
 
-const login = async (correo) => {
+const login = async (correoNorm) => {
   const [rows] = await pool.query(
     `SELECT 
        u.id, u.correo, u.numero_documento, u.user_password,
@@ -9,21 +9,21 @@ const login = async (correo) => {
      FROM usuarios u
      JOIN roles r ON u.rol_id = r.id
      JOIN sedes s ON u.sede_id = s.id
-     WHERE u.correo = ?
+     WHERE LOWER(u.correo) = ?
      LIMIT 1`,
-    [correo]
+    [correoNorm.toLowerCase()]
   );
-
   return rows[0];
 };
 
 
 const obtenerUsuarios = async () => {
   const [rows] = await pool.query(`
-    SELECT u.id, u.correo, u.numero_documento, r.nombre AS rol, s.nombre AS sede
+    SELECT u.id, u.correo, r.nombre AS rol, s.nombre AS sede
     FROM usuarios u
     JOIN roles r ON u.rol_id = r.id
     JOIN sedes s ON u.sede_id = s.id
+    ORDER BY u.id DESC
     LIMIT 10
   `);
   return rows;

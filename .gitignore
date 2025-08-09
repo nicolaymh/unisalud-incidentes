@@ -4,3 +4,6 @@
 # Ignorar solo el .env dentro de backend/
 backend/.env
 
+# Ignorar solo el .env dentro de backend/
+frontend/.env
+
